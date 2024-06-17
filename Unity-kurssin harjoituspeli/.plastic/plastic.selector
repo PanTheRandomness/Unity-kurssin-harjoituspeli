@@ -1,0 +1,4 @@
+repository "Unity-kurssin harjoituspeli@eveliina200@cloud"
+  path "/"
+    br "/main"
+    co "/main"
