@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Kpl6_Ajopeli.unity
+- path: Assets/Scenes/Kpl5Kpl6_Skriptaus_Ajopeli.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
