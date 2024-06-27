@@ -35,10 +35,10 @@ public class PlayerControls : MonoBehaviour
     {
         float boost = boostInput ? boostPower: 1;
         // Turning the ship
-        shipRigidBody.AddRelativeTorque(0f, turnInput * turnSpeed * boost, 0f);
+        shipRigidBody.AddRelativeTorque(0f, turnInput * turnSpeed /** boost*/, 0f);
 
         // Moving the ship
-        shipRigidBody.AddRelativeForce(0f, 0f, thrustInput * thrustSpeed * boost);
+        shipRigidBody.AddRelativeForce(0f, 0f, thrustInput * thrustSpeed /** boost*/);
 
         // Hovering
         Ray ray = new Ray(transform.position, -transform.up);
