@@ -15,13 +15,11 @@ public class PlayerControls : MonoBehaviour
     private Rigidbody shipRigidBody;
     private bool boostInput;
 
-    // Start is called before the first frame update
     void Start()
     {
         shipRigidBody = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         thrustInput = Input.GetAxis("Vertical");
