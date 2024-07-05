@@ -31,6 +31,13 @@ public class PlayerControls : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Lis‰t‰‰n ylim‰‰r‰inen painovoima ilmassa
+        // Adding additional gravity only in air
+        if (!Physics.Raycast(transform.position, -transform.up, hoverHeight))
+        {
+            shipRigidBody.AddForce(Vector3.down * 20f, ForceMode.Acceleration);
+        }
+
         float boost = boostInput ? boostPower: 1;
         // Turning the ship
         shipRigidBody.AddRelativeTorque(0f, turnInput * turnSpeed /** boost*/, 0f);
@@ -47,10 +54,10 @@ public class PlayerControls : MonoBehaviour
             Vector3 appliedHoverForce = Vector3.up * proportionalHeight * hoverPower;
 
             shipRigidBody.AddForce(appliedHoverForce, ForceMode.Acceleration);
-            /* if (hit.distance < hoverHeight / 2)
+            if (hit.distance < hoverHeight / 2)
             {
                 appliedHoverForce *= 2;
-            }*/
+            }
         }
     }
 }
